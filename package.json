@@ -1,0 +1,50 @@
+{
+  "name": "al-quran",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@nextui-org/accordion": "^2.0.23",
+    "@nextui-org/avatar": "^2.0.24",
+    "@nextui-org/badge": "^2.0.23",
+    "@nextui-org/button": "^2.0.21",
+    "@nextui-org/card": "^2.0.21",
+    "@nextui-org/checkbox": "^2.0.24",
+    "@nextui-org/divider": "^2.0.20",
+    "@nextui-org/input": "^2.1.9",
+    "@nextui-org/listbox": "^2.1.10",
+    "@nextui-org/modal": "^2.0.23",
+    "@nextui-org/navbar": "^2.0.22",
+    "@nextui-org/skeleton": "^2.0.19",
+    "@nextui-org/system": "^2.0.10",
+    "@nextui-org/tabs": "^2.0.21",
+    "@nextui-org/theme": "^2.1.9",
+    "clsx": "^2.0.0",
+    "framer-motion": "^10.16.4",
+    "next": "14.0.0",
+    "next-pwa": "^5.6.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^4.11.0",
+    "react-intersection-observer": "^9.5.2",
+    "react-modal-sheet": "^2.2.0",
+    "tailwind-scrollbar": "^3.0.5",
+    "usehooks-ts": "^2.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.0",
+    "postcss": "^8",
+    "tailwindcss": "^3",
+    "typescript": "^5"
+  }
+}

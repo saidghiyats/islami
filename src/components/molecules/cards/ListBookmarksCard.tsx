@@ -9,7 +9,7 @@ import {
   PiBookmarksSimpleBold,
   PiCaretRightBold,
 } from "react-icons/pi";
-import { Listbox, ListboxSection, ListboxItem } from "@nextui-org/listbox";
+import { Listbox, ListboxItem } from "@nextui-org/listbox";
 import Link from "next/link";
 import { Accordion, AccordionItem } from "@nextui-org/accordion";
 import { BookmarkContext } from "@/contexts/BookmarksContext";
@@ -46,18 +46,18 @@ export default function ListBookmarksCard() {
           }}
         >
           <Tab key="single" title="Single">
-            <Listbox
-              variant="flat"
-              itemClasses={{
-                base: "bg-secondary hover:bg-secondary/60 px-3 py-2",
-                title: "font-semibold text-secondary-500 text-base",
-                description:
-                  "font-medium text-secondary-300 group-hover:text-secondary-300",
-              }}
-              className="space-y-2"
-            >
-              {bookmarks?.single ? (
-                bookmarks.single.map((item: SingleBookmark) => {
+            {bookmarks?.single.length > 0 ? (
+              <Listbox
+                variant="flat"
+                itemClasses={{
+                  base: "bg-secondary hover:bg-secondary/60 px-3 py-2",
+                  title: "font-semibold text-secondary-500 text-base",
+                  description:
+                    "font-medium text-secondary-300 group-hover:text-secondary-300",
+                }}
+                className="space-y-2"
+              >
+                {bookmarks.single.map((item: SingleBookmark) => {
                   return (
                     <ListboxItem
                       as={Link}
@@ -68,27 +68,29 @@ export default function ListBookmarksCard() {
                       {item.name}
                     </ListboxItem>
                   );
-                })
-              ) : (
-                <p>Tidak ada</p>
-              )}
-            </Listbox>
+                })}
+              </Listbox>
+            ) : (
+              <p className="text-center text-sm font-medium text-secondary-500/80">
+                Tidak ada bookmark
+              </p>
+            )}
           </Tab>
           <Tab key="multiple" title="Multiple">
-            <Accordion
-              itemClasses={{
-                title: "text-base font-semibold text-secondary-500",
-                subtitle: "text-xs text-secondary-300",
-                base: "m-1 rounded-md mb-2 data-[open=true]:bg-secondary",
-                content: "px-2 pt-0",
-                trigger:
-                  "px-3 py-2 bg-secondary hover:bg-secondary/60 rounded-md",
-              }}
-              className="p-0"
-              showDivider={false}
-            >
-              {bookmarks?.multiple ? (
-                bookmarks.multiple.map((item: MultipleBookmark) => {
+            {bookmarks?.multiple > 0 ? (
+              <Accordion
+                itemClasses={{
+                  title: "text-base font-semibold text-secondary-500",
+                  subtitle: "text-xs text-secondary-300",
+                  base: "m-1 rounded-md mb-2 data-[open=true]:bg-secondary",
+                  content: "px-2 pt-0",
+                  trigger:
+                    "px-3 py-2 bg-secondary hover:bg-secondary/60 rounded-md",
+                }}
+                className="p-0"
+                showDivider={false}
+              >
+                {bookmarks.multiple.map((item: MultipleBookmark) => {
                   return (
                     <AccordionItem
                       key={item.name}
@@ -125,11 +127,13 @@ export default function ListBookmarksCard() {
                       </Listbox>
                     </AccordionItem>
                   );
-                })
-              ) : (
-                <p>Tidak ada</p>
-              )}
-            </Accordion>
+                })}
+              </Accordion>
+            ) : (
+              <p className="text-center text-sm font-medium text-secondary-500/80">
+                Tidak ada bookmark
+              </p>
+            )}
           </Tab>
         </Tabs>
       </CardBody>

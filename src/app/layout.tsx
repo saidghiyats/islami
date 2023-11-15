@@ -31,7 +31,9 @@ export default function RootLayout({
       >
         <RootProviders>
           <Header />
-          <div className="container py-8 w-full flex gap-6">{children}</div>
+          <div className="container py-8 w-full flex gap-6 px-4 md:px-6">
+            {children}
+          </div>
           {/* <MobileNav /> */}
           <Footer />
         </RootProviders>

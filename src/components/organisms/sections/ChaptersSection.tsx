@@ -37,7 +37,7 @@ export default function ChaptersSection({ chapters, juzs }: Props) {
         </Button>
         <Tabs
           classNames={{
-            tabList: "bg-primary-0",
+            tabList: "bg-primary-0 mb-2",
             cursor: "bg-primary-500",
             tabContent:
               "group-data-[selected=true]:text-primary-0 font-medium text-secondary-300",
@@ -45,7 +45,7 @@ export default function ChaptersSection({ chapters, juzs }: Props) {
           }}
         >
           <Tab key="surah" title="Surah">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-4">
               {chapters.data
                 .sort((a, b) =>
                   !value ? a.number - b.number : b.number - a.number
@@ -104,7 +104,7 @@ export default function ChaptersSection({ chapters, juzs }: Props) {
             </div>
           </Tab>
           <Tab key="revelation" title="Revelation Order">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-4">
               {chapters.data
                 .sort((a, b) =>
                   !value ? a.sequence - b.sequence : b.sequence - a.sequence

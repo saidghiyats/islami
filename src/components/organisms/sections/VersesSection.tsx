@@ -1,6 +1,5 @@
 "use client";
 import VerseCard from "@/components/molecules/cards/VerseCard";
-import LoadMoreVerses from "@/components/molecules/LoadMoreVerses";
 import BookmarkModal from "@/components/molecules/modals/BookmarkModal";
 import { Data, Verse, Verses } from "@/types/Verses";
 import { useDisclosure } from "@nextui-org/modal";

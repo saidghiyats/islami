@@ -41,6 +41,7 @@ export default function NavChapters({ chapters, id }: Props) {
     <Listbox
       as={"div"}
       ref={parentSurahDivRef}
+      aria-label="chapters"
       itemClasses={{
         base: "data-[hover=true]:bg-transparent bg-transparent relative group",
         title: "z-[1] pl-1 text-secondary-900 font-medium",
@@ -51,10 +52,11 @@ export default function NavChapters({ chapters, id }: Props) {
         return (
           <ListboxItem
             as={Link}
-            key={chapter.number}
+            key={chapter.name.transliteration.id}
             data-chapter={chapter.number}
             href={`/${chapter.number}`}
             className="text-sm"
+            textValue={chapter.name.transliteration.id}
             onMouseOver={() => {
               if (String(chapter.number) !== id) {
                 setHoveredSurah(String(chapter.number));

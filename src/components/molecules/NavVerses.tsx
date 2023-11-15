@@ -41,6 +41,7 @@ export default function NavVerses({ verseCount, id }: Props) {
     <Listbox
       as={"div"}
       ref={parentDivRef}
+      aria-label="verses"
       itemClasses={{
         base: "data-[hover=true]:bg-transparent bg-transparent relative group gap-0 h-max",
         title: "z-[1] pl-1  text-secondary-900 font-medium",
@@ -52,7 +53,8 @@ export default function NavVerses({ verseCount, id }: Props) {
         return (
           <ListboxItem
             as={Link}
-            key={index}
+            key={value}
+            textValue={value}
             href={`/${id}#${value}`}
             data-verse={value}
             className="text-sm"

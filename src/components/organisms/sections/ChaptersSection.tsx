@@ -30,19 +30,18 @@ export default function ChaptersSection({ chapters, juzs }: Props) {
           isIconOnly
           variant="flat"
           aria-label="sort"
-          className="absolute right-0 bg-primary-0 text-accent data-[pressed=true]:rotate-180"
+          className="absolute right-0 data-[pressed=true]:rotate-180 bg-content1"
           onPress={toggle}
         >
           <PiArrowsDownUpBold className="w-5 h-5" />
         </Button>
         <Tabs
           classNames={{
-            tabList: "bg-primary-0 mb-2",
-            cursor: "bg-primary-500",
-            tabContent:
-              "group-data-[selected=true]:text-primary-0 font-medium text-secondary-300",
+            tabList: "mb-2 bg-content1",
+            tabContent: "font-medium",
             panel: "px-0",
           }}
+          color="primary"
         >
           <Tab key="surah" title="Surah">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-4">
@@ -93,7 +92,6 @@ export default function ChaptersSection({ chapters, juzs }: Props) {
                                 chapter.name.translation.id
                               }
                               verses_count={chapter.numberOfVerses}
-                              background="bg-secondary"
                             />
                           );
                         })}

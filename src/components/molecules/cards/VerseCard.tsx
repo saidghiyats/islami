@@ -49,7 +49,7 @@ export default function VerseCard({
       id={verse.number.inSurah.toString()}
       className="scroll-mt-[calc(100vh_/_2)]"
     >
-      <Card shadow="none" classNames={{ base: "bg-primary-0" }}>
+      <Card shadow="none" classNames={{ base: "bg-default-50" }}>
         <CardHeader className="flex justify-between">
           <div className="space-x-2">
             <Button

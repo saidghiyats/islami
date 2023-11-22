@@ -1,6 +1,7 @@
-import SettingCard from "@/components/molecules/cards/NavCard";
+import NavCard from "@/components/molecules/cards/NavCard";
 import TOCMenuCard from "@/components/molecules/cards/TOCMenuCard";
 import Sidebar from "@/components/organisms/sidebar/Sidebar";
+import { Suspense } from "react";
 
 export default function DetailLayout({
   children,
@@ -13,7 +14,9 @@ export default function DetailLayout({
     <>
       {children}
       <Sidebar>
-        <SettingCard id={id} />
+        <Suspense fallback={<p>Loading...</p>}>
+          <NavCard id={id} />
+        </Suspense>
         {/* <TOCMenuCard /> */}
       </Sidebar>
     </>

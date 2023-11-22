@@ -20,7 +20,7 @@ export default function ListBookmarksCard() {
   return (
     <Card
       classNames={{
-        base: "max-h-96 bg-primary-0",
+        base: "max-h-96 bg-content1",
         header: "px-5",
         body: "pt-0",
         footer: "px-5",
@@ -77,7 +77,7 @@ export default function ListBookmarksCard() {
             )}
           </Tab>
           <Tab key="multiple" title="Multiple">
-            {bookmarks?.multiple > 0 ? (
+            {bookmarks?.multiple.length > 0 ? (
               <Accordion
                 itemClasses={{
                   title: "text-base font-semibold text-secondary-500",

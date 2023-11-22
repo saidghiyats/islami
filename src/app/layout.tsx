@@ -5,7 +5,7 @@ import MobileNav from "@/components/organisms/mobile-nav/MobileNav";
 import clsx from "clsx";
 import Header from "@/components/organisms/header/Header";
 import Footer from "@/components/organisms/footer/Footer";
-import { fontSans, quicksand } from "@/fonts";
+import { fontSans, fontTitle } from "@/fonts";
 import { config } from "@/config";
 
 export const metadata: Metadata = {
@@ -25,8 +25,8 @@ export default function RootLayout({
       <body
         className={clsx(
           fontSans.variable,
-          "scrollbar-w-[6px] scrollbar scrollbar-thumb-default hover:scrollbar-thumb-default-500 scrollbar-track-gray-100 scrollbar-thumb-rounded-full",
-          "bg-background font-sans"
+          fontTitle.variable,
+          "font-sans bg-[#F6F7F9] dark:bg-background min-h-screen"
         )}
       >
         <RootProviders>

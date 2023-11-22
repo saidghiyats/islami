@@ -35,17 +35,17 @@ export default function BookmarkFolder({
       }}
     >
       <Tab key="single" title="Single">
-        <Listbox
-          variant="flat"
-          itemClasses={{
-            base: "p-2 bg-secondary data-[hover=true]:bg-secondary/60",
-            title: "font-medium text-secondary-900",
-          }}
-          className="space-y-1"
-          selectionMode="single"
-        >
-          {bookmarks?.single ? (
-            bookmarks.single.map((item: SingleBookmark) => {
+        {bookmarks.single.length > 0 ? (
+          <Listbox
+            variant="flat"
+            itemClasses={{
+              base: "p-2 bg-secondary data-[hover=true]:bg-secondary/60",
+              title: "font-medium text-secondary-900",
+            }}
+            className="space-y-1"
+            selectionMode="single"
+          >
+            {bookmarks.single.map((item: SingleBookmark) => {
               return (
                 <ListboxItem
                   href={`/${item.numberInQuran}`}
@@ -63,24 +63,26 @@ export default function BookmarkFolder({
                   {item.name}
                 </ListboxItem>
               );
-            })
-          ) : (
-            <p>Tidak ada</p>
-          )}
-        </Listbox>
+            })}
+          </Listbox>
+        ) : (
+          <p className="text-center text-sm font-medium text-secondary-500/80">
+            Tidak ada bookmark
+          </p>
+        )}
       </Tab>
       <Tab key="multiple" title="Multiple">
-        <Listbox
-          variant="flat"
-          itemClasses={{
-            base: "p-2 bg-secondary data-[hover=true]:bg-secondary/60",
-            title: "font-medium text-secondary-900",
-          }}
-          className="space-y-1"
-          selectionMode="single"
-        >
-          {bookmarks?.multiple ? (
-            bookmarks.multiple.map((item: MultipleBookmark) => {
+        {bookmarks.multiple.length > 0 ? (
+          <Listbox
+            variant="flat"
+            itemClasses={{
+              base: "p-2 bg-secondary data-[hover=true]:bg-secondary/60",
+              title: "font-medium text-secondary-900",
+            }}
+            className="space-y-1"
+            selectionMode="single"
+          >
+            {bookmarks.multiple.map((item: MultipleBookmark) => {
               return (
                 <ListboxItem
                   href={`/${item.numberInQuran}`}
@@ -98,11 +100,13 @@ export default function BookmarkFolder({
                   {item.name}
                 </ListboxItem>
               );
-            })
-          ) : (
-            <p>Tidak ada</p>
-          )}
-        </Listbox>
+            })}
+          </Listbox>
+        ) : (
+          <p className="text-center text-sm font-medium text-secondary-500/80">
+            Tidak ada bookmark
+          </p>
+        )}
       </Tab>
     </Tabs>
   );

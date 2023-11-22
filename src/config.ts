@@ -1,12 +1,7 @@
-import {
-  PiBookBold,
-  PiBookBookmarkBold,
-  PiBookOpenTextBold,
-  PiHouseBold,
-} from "react-icons/pi";
+import { PiBookBold, PiHouseBold } from "react-icons/pi";
 
 export const config = {
-  title: "Al-Qur'an",
+  title: "Quran",
   description: "Read Al-Qur'an Wherever",
   header_nav: [
     {
